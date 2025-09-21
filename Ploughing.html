@@ -34,14 +34,21 @@
         .active {
             display: block;
         }
-        .images {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin: 20px 0;
+        .images-gallery-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            overflow: hidden;
         }
-        .images img {
+        .images-gallery {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 10px 0;
+        }
+        .images-gallery img {
             max-width: 180px;
             max-height: 120px;
             border-radius: 8px;
@@ -49,9 +56,33 @@
             object-fit: cover;
             transition: transform 0.2s;
             cursor: pointer;
+            flex-shrink: 0;
         }
-        .images img:hover {
+        .images-gallery img:hover {
             transform: scale(1.05);
+        }
+        .gallery-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.6);
+            color: #fff;
+            border: none;
+            font-size: 28px;
+            padding: 8px 14px;
+            cursor: pointer;
+            z-index: 2;
+            border-radius: 50%;
+            transition: background 0.2s;
+        }
+        .gallery-btn:hover {
+            background: rgba(0,0,0,0.8);
+        }
+        .gallery-btn.left {
+            left: 0;
+        }
+        .gallery-btn.right {
+            right: 0;
         }
         .video {
             text-align: center;
@@ -76,6 +107,12 @@
         function toggleMute() {
             var video = document.getElementById('artifactVideo');
             video.muted = !video.muted;
+        }
+
+        function slideGallery(direction) {
+            const gallery = document.getElementById('imagesGallery');
+            const scrollAmount = 200; // px per click
+            gallery.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
         }
     </script>
 </head>
@@ -108,9 +145,17 @@ The handle of a Nagula is called <b>Nimun Kurulla</b> or the <b>Nagul Atha</b>. 
             </p>
         </div>
 
-        <div class="images">
-            <img src="SRC/maxresdefault.jpg" alt="Artifact Image 1">
-            <img src="SRC/wooden-plow-image-plowing-harness-isolated-white-background-167420479.webp" alt="Artifact Image 2">
+        <div class="images-gallery-container">
+            <button class="gallery-btn left" onclick="slideGallery(-1)">&#8592;</button>
+            <div class="images-gallery" id="imagesGallery">
+                <img src="SRC/maxresdefault.jpg" alt="Artifact Image 1">
+                <img src="SRC/wooden-plow-image-plowing-harness-isolated-white-background-167420479.webp" alt="Artifact Image 2">
+                <img src="SRC/10THFARMDISTRESS.webp" alt="Artifact Image 3">
+                <img src="SRC/subsistence-farmer-tamil-nadu-india-peasent-ploughing-paddy-field-chettinad-district-region-southern-32768881.webp" alt="Artifact Image 4">
+                <img src="SRC/f2c7dc1fb1293f7015d254b61c2d7264.jpg" alt="Artifact Image 5">
+                <!-- Add more images here if needed -->
+            </div>
+            <button class="gallery-btn right" onclick="slideGallery(1)">&#8594;</button>
         </div>
 
         <div class="video">
