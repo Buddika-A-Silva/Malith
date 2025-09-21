@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historical Artifact</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/2e/Sri_Lankan_village.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .language-selector {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .language-selector button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .content {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .images {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        .images img {
+            max-width: 180px;
+            max-height: 120px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+            object-fit: cover;
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+        .images img:hover {
+            transform: scale(1.05);
+        }
+        .video {
+            text-align: center;
+            margin-top: 30px;
+        }
+        video {
+            width: 95vw;
+            max-width: 900px;
+            height: 60vh;
+            border-radius: 10px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.7);
+            background: #222;
+        }
+    </style>
+    <script>
+        function showLanguage(lang) {
+            document.getElementById('en').classList.remove('active');
+            document.getElementById('si').classList.remove('active');
+            document.getElementById(lang).classList.add('active');
+        }
+
+        function toggleMute() {
+            var video = document.getElementById('artifactVideo');
+            video.muted = !video.muted;
+        }
+    </script>
+</head>
+<body>
+    <div class="overlay">
+        <div class="language-selector">
+            <button onclick="showLanguage('en')">English</button>
+            <button onclick="showLanguage('si')">සිංහල</button>
+        </div>
+
+        <div id="en" class="content active">
+            <h1>Ploughing (Nagula)</h1>
+            <p>A Nagula is used to plough the land before paddy is cultivated. Ploughing loosens the soil facilitating good ventilation and water supply to the soil, while also destroying weeds and boosting microbial activity .Ancient and traditional farmers of Sri Lanka used different types of Nagulas - such as the Sinhala Nagula, Yakada (Iron) Nagula, and Kakulan Nagula - based on the formation of the land and pattern of cultivation. Sri Lankan farmers commonly used 'Sinhala Nagula’ for ploughing.
+
+Structure of a Nagula
+
+The handle of a Nagula is called Nimun Kurulla or the Nagul Atha. The handle is fixed to a grip called Nimun Mita. The Vakkote is the part of a Nagula that hollows the ground out. The Nagula is dragged along the ground by its stem, Pathakadaya which is tied to a wooden bar or yoke (Viyagaha) by a chord called an Amuthu Bana. The Viyagaha is placed on the neck of oxen. The Amuthu Bana is commonly made of deer or sambar deer skin, or from raw rind of a coconut shaft or rinds of trees such as Lihiniya or Nava. A ridge is made in the Viyagaha to grip the Nagula. A stick called Kewita is used to drive the working bovines (ox, cow, buffaloes) while ploughing.</p>
+        </div>
+
+        <div id="si" class="content">
+            <h1>උරුම වස්තුවේ නම</h1>
+            <p>මෙම උරුම වස්තුව පිළිබඳ විස්තරය මෙහි ඇතුළත් වේ...</p>
+        </div>
+
+        <div class="images">
+            <img src="SRC/maxresdefault.jpg" alt="Artifact Image 1">
+            <img src="SRC/wooden-plow-image-plowing-harness-isolated-white-background-167420479.webp" alt="Artifact Image 2">
+        </div>
+
+        <div class="video">
+            <video controls muted id="artifactVideo">
+                <source src="SRC/Bullock Ploughing Land __ Cow plough videos How to __ Plow Soil by Cows.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <br>
+            <button onclick="toggleMute()">Unmute / Mute</button>
+        </div>
+    </div>
+</body>
+</html>

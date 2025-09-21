@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historical Artifact</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/2e/Sri_Lankan_village.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .language-selector {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .language-selector button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .content {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .images {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .images img {
+            max-width: 80%;
+            margin: 10px;
+        }
+        .video {
+            text-align: center;
+            margin-top: 30px;
+        }
+        video {
+            width: 80%;
+            max-width: 600px;
+        }
+    </style>
+    <script>
+        function showLanguage(lang) {
+            document.getElementById('en').classList.remove('active');
+            document.getElementById('si').classList.remove('active');
+            document.getElementById(lang).classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <div class="overlay">
+        <div class="language-selector">
+            <button onclick="showLanguage('en')">English</button>
+            <button onclick="showLanguage('si')">සිංහල</button>
+        </div>
+
+        <div id="en" class="content active">
+            <h1>Artifact Title (English)</h1>
+            <p>Description about the artifact in English goes here...</p>
+        </div>
+
+        <div id="si" class="content">
+            <h1>උරුම වස්තුවේ නම</h1>
+            <p>මෙම උරුම වස්තුව පිළිබඳ විස්තරය මෙහි ඇතුළත් වේ...</p>
+        </div>
+
+        <div class="images">
+            <img src="placeholder1.jpg" alt="Artifact Image 1">
+            <img src="placeholder2.jpg" alt="Artifact Image 2">
+        </div>
+
+        <div class="video">
+            <video controls>
+                <source src="artifact_video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</body>
+</html>
