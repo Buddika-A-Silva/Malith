@@ -30,6 +30,7 @@
         }
         .content {
             display: none;
+            text-align: center; /* add this line */
         }
         .active {
             display: block;
@@ -37,22 +38,22 @@
         .images-gallery-container {
             position: relative;
             width: 100%;
-            max-width: 700px;
-            margin: 0 auto 30px auto;
+            max-width: 1400px; /* increased from 1100px */
+            margin: 0 auto 50px auto; /* more space below */
             overflow: hidden;
         }
         .images-gallery {
             display: flex;
-            gap: 15px;
+            gap: 36px; /* increased from 28px */
             overflow-x: auto;
             scroll-behavior: smooth;
-            padding: 10px 0;
+            padding: 32px 0; /* increased from 22px 0 */
         }
         .images-gallery img {
-            max-width: 180px;
-            max-height: 120px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+            max-width: 400px; /* increased from 300px */
+            max-height: 270px; /* increased from 200px */
+            border-radius: 16px; /* slightly increased */
+            box-shadow: 0 2px 16px rgba(0,0,0,0.5);
             object-fit: cover;
             transition: transform 0.2s;
             cursor: pointer;
@@ -96,6 +97,30 @@
             box-shadow: 0 2px 16px rgba(0,0,0,0.7);
             background: #222;
         }
+        h1 {
+            text-align: center;
+        }
+        .social-media {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            margin-top: 40px;
+            margin-bottom: 10px;
+        }
+        .social-media a {
+            display: inline-block;
+            width: 32px;    /* reduced from 48px */
+            height: 32px;   /* reduced from 48px */
+            transition: transform 0.2s;
+        }
+        .social-media a:hover {
+            transform: scale(1.15);
+        }
+        .social-media svg {
+            width: 100%;
+            height: 100%;
+            fill: #fff;
+        }
     </style>
     <script>
         function showLanguage(lang) {
@@ -128,8 +153,8 @@
             <p>A Nagula is used to plough the land before paddy is cultivated. Ploughing loosens the soil facilitating good ventilation and water supply to the soil, while also destroying weeds and boosting microbial activity .Ancient and traditional farmers of Sri Lanka used different types of Nagulas - such as the Sinhala Nagula, Yakada (Iron) Nagula, and Kakulan Nagula - based on the formation of the land and pattern of cultivation. Sri Lankan farmers commonly used 'Sinhala Nagula’ for ploughing.
 <br>
 <br>
-Structure of a Nagula
-<br><br>
+<h3>Structure of a Nagula</h3>
+
 The handle of a Nagula is called <b>Nimun Kurulla</b> or the <b>Nagul Atha</b>. The handle is fixed to a grip called Nimun Mita. The Vakkote is the part of a Nagula that hollows the ground out. The Nagula is dragged along the ground by its stem, Pathakadaya which is tied to a wooden bar or yoke (Viyagaha) by a chord called an Amuthu Bana. The Viyagaha is placed on the neck of oxen. The Amuthu Bana is commonly made of deer or sambar deer skin, or from raw rind of a coconut shaft or rinds of trees such as Lihiniya or Nava. A ridge is made in the Viyagaha to grip the Nagula. A stick called Kewita is used to drive the working bovines (ox, cow, buffaloes) while ploughing.</p>
         </div>
 
@@ -137,7 +162,7 @@ The handle of a Nagula is called <b>Nimun Kurulla</b> or the <b>Nagul Atha</b>. 
             <h1>පැරණි නගුල සහ විය ගස</h1>
             <p>ඇන වර්ග කිසිවක් භාවිතා නොකර ලී අගුල් මගින් තද කරගෙන ඇත. තලයටම රිවට්වූ කම්මල් උල් දෙකක් සහිත කුඩා වානේ තලය නගුලේ බිම හාරන කොටසට සවිකර ඇත. අත් කූරේ අගට හරක් අං කොටසක් ( උල සහිත අග කොටස ) සවිකර ඇත.
                 <br><br>
-                නගුල පිළිබඳ රොබට් නොක්ස් වාර්තා සටහන් මෙසේ දක්වයි.<br><br>
+                <h3>නගුල පිළිබඳ රොබට් නොක්ස් වාර්තා සටහන් මෙසේ දක්වයි.</h3>
 
 නගුල වූකලී මිනිස් අතකට වඩා මදක් මහත්වූ දික් දන්ඩකින් හා උල් වූ එක්කොනක් බිම ඇනෙන අත් දන්ඩකින් යුතිතවූ උපකරණයකි. මෙම අත් දන්ඩෙහි වක්වූ තැන නගුලේ හිස පමණ පළල ඇති අගල් තූනක් හෝ හතරක් ගන කම් ඇති සවිමත් ලී කැබැල්ලක් සවිකොට ඇත්තේය නගුල නොගෙවී යනු පිණිස නගුලෙහි ලෝහමය තහඩුවක් සවිකොට ඇත. නගල අදින්නාවූ ගවයින් අදිනු ලබන්නේ විය දන්ඩෙනි.
 <br>
@@ -165,6 +190,21 @@ The handle of a Nagula is called <b>Nimun Kurulla</b> or the <b>Nagul Atha</b>. 
             </video>
             <br>
             
+        </div>
+
+        <div class="social-media">
+            <a href="https://facebook.com" target="_blank" title="Facebook" aria-label="Facebook">
+                <svg viewBox="0 0 32 32"><path d="M29 0h-26c-1.7 0-3 1.3-3 3v26c0 1.7 1.3 3 3 3h13v-12h-4v-5h4v-4c0-4.1 2.5-6.3 6.1-6.3 1.8 0 3.6 0.3 3.6 0.3v4h-2c-2 0-2.6 1.2-2.6 2.5v3.5h5l-1 5h-4v12h7c1.7 0 3-1.3 3-3v-26c0-1.7-1.3-3-3-3z"/></svg>
+            </a>
+            <a href="https://twitter.com" target="_blank" title="Twitter" aria-label="Twitter">
+                <svg viewBox="0 0 32 32"><path d="M32 6.1a13.1 13.1 0 0 1-3.8 1.1 6.6 6.6 0 0 0 2.9-3.6 13.2 13.2 0 0 1-4.2 1.6 6.6 6.6 0 0 0-11.3 6c-5.5-0.3-10.4-2.9-13.7-6.9a6.6 6.6 0 0 0 2 8.8 6.6 6.6 0 0 1-3-0.8v0.1a6.6 6.6 0 0 0 5.3 6.5 6.6 6.6 0 0 1-3 .1 6.6 6.6 0 0 0 6.2 4.6 13.2 13.2 0 0 1-8.2 2.8c-0.5 0-1 0-1.5-0.1a18.6 18.6 0 0 0 10.1 3c12.1 0 18.7-10 18.7-18.7 0-0.3 0-0.5 0-0.8a13.4 13.4 0 0 0 3.3-3.4z"/></svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" title="Instagram" aria-label="Instagram">
+                <svg viewBox="0 0 32 32"><path d="M16 7.6a8.4 8.4 0 1 0 0 16.8 8.4 8.4 0 0 0 0-16.8zm0 13.8a5.4 5.4 0 1 1 0-10.8 5.4 5.4 0 0 1 0 10.8zm10.2-13.9a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm5.6 2c-0.1-2.2-0.6-4.2-2.2-5.8s-3.6-2.1-5.8-2.2c-2.3-0.1-9.2-0.1-11.5 0-2.2 0.1-4.2 0.6-5.8 2.2s-2.1 3.6-2.2 5.8c-0.1 2.3-0.1 9.2 0 11.5 0.1 2.2 0.6 4.2 2.2 5.8s3.6 2.1 5.8 2.2c2.3 0.1 9.2 0.1 11.5 0 2.2-0.1 4.2-0.6 5.8-2.2s2.1-3.6 2.2-5.8c0.1-2.3 0.1-9.2 0-11.5zm-3.6 14c-0.7 1.7-2 3-3.7 3.7-2.6 1-8.7 0.8-11.5 0-1.7-0.7-3-2-3.7-3.7-1-2.6-0.8-8.7 0-11.5 0.7-1.7 2-3 3.7-3.7 2.6-1 8.7-0.8 11.5 0 1.7 0.7 3 2 3.7 3.7 1 2.6 0.8 8.7 0 11.5z"/></svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" title="YouTube" aria-label="YouTube">
+                <svg viewBox="0 0 32 32"><path d="M31.7 9.3a3.9 3.9 0 0 0-2.7-2.7c-2.4-0.7-12-0.7-12-0.7s-9.6 0-12 0.7a3.9 3.9 0 0 0-2.7 2.7c-0.7 2.4-0.7 7.4-0.7 7.4s0 5 0.7 7.4a3.9 3.9 0 0 0 2.7 2.7c2.4 0.7 12 0.7 12 0.7s9.6 0 12-0.7a3.9 3.9 0 0 0 2.7-2.7c0.7-2.4 0.7-7.4 0.7-7.4s0-5-0.7-7.4zm-18.7 12.7v-9l8.7 4.5-8.7 4.5z"/></svg>
+            </a>
         </div>
     </div>
 </body>
